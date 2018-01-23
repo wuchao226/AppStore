@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/backgound_fcfcfc">
+
+    <ImageView
+        android:id="@+id/banner_img"
+        android:layout_width="match_parent"
+        android:layout_height="112.0dip"
+        android:layout_centerInParent="true"
+        android:src="@drawable/img_banner_essential_vertical"/>
+
+    <Button
+        android:id="@+id/enter_button"
+        android:layout_width="fill_parent"
+        android:layout_height="40.0dip"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="16.0dip"
+        android:layout_marginLeft="16.0dip"
+        android:layout_marginRight="6.0dip"
+        android:layout_weight="1.0"
+        android:background="@drawable/dialog_button_select"
+        android:text="@string/gotoappcenter"
+        android:textAllCaps="true"
+        android:textColor="@color/blue_text_007dff"
+        android:textSize="@dimen/res_textsize_14dp"/>
+
+</RelativeLayout>

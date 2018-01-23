@@ -1,0 +1,60 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.jakewharton.butterknife'
+//添加如下代码，应用apt插件
+//apply plugin: 'com.neenbedankt.android-apt'
+apply plugin: 'org.greenrobot.greendao'
+
+def configInfo = rootProject.ext.android
+def librarys = rootProject.ext.dependencies
+android {
+    //编译SDK版本
+    compileSdkVersion configInfo.compileSdkVersion
+    //buid tools版本
+    buildToolsVersion configInfo.buildToolsVersion
+    defaultConfig {
+        applicationId "com.wuchao.store"
+        //最小支持的SDK版本
+        minSdkVersion configInfo.minSdkVersion
+        //目标SDK版本
+        targetSdkVersion configInfo.targetSdkVersion
+
+        //版本号
+        versionCode configInfo.versionCode
+        // 版本名字
+        versionName configInfo.versionName
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    configurations.all {
+        resolutionStrategy.force 'com.google.code.findbugs:jsr305:1.3.9'
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile project(':rxretrofitlibrary')
+    compile project(':recyclerviewlibrary')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    librarys.supportV7
+    librarys.design
+    librarys.recyclerview
+    librarys.cardview
+    compile 'com.jakewharton:butterknife:8.4.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.4.0'
+    compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha7'
+    compile 'com.android.support:support-v4:25.3.1'
+    compile 'com.google.dagger:dagger:2.4'
+    compile 'com.google.dagger:dagger-compiler:2.4'
+    compile 'org.glassfish:javax.annotation:10.0-b28'
+    compile 'org.greenrobot:greendao:3.2.2'
+    compile 'de.hdodenhof:circleimageview:2.1.0'
+    testCompile 'junit:junit:4.12'
+}
