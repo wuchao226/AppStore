@@ -1,5 +1,6 @@
 package com.wuchao.store.mvp.view.activity;
 
+import android.annotation.SuppressLint;
 import android.content.pm.IPackageStatsObserver;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
@@ -37,6 +38,7 @@ public class CleanCacheActivity extends BaseActivity {
     @BindView(R.id.tv_scan_status)
     TextView tv_status;
 
+    @SuppressLint("HandlerLeak")
     private Handler handler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
@@ -104,6 +106,7 @@ public class CleanCacheActivity extends BaseActivity {
      */
     private void scanCache() {
         new Thread() {
+            @SuppressWarnings("JavaReflectionMemberAccess")
             public void run() {
                 PackageManager pm = getPackageManager();
                 List<PackageInfo> packInfos = pm.getInstalledPackages(0);
@@ -120,6 +123,7 @@ public class CleanCacheActivity extends BaseActivity {
                     final String appname = packinfo.applicationInfo.loadLabel(pm).toString();
                     runOnUiThread(new Runnable() {
 
+                        @SuppressLint("SetTextI18n")
                         @Override
                         public void run() {
                             tv_status.setText("正在扫描：" + appname);
@@ -141,8 +145,6 @@ public class CleanCacheActivity extends BaseActivity {
                     }
                 });
             }
-
-            ;
         }.start();
     }
 

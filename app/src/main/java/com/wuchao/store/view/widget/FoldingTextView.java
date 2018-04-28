@@ -72,7 +72,7 @@ public class FoldingTextView extends LinearLayout implements View.OnClickListene
     }
 
     /**
-     * 最小高度最大高度（收缩）
+     * 最小高度（收缩）
      *
      * @return
      */

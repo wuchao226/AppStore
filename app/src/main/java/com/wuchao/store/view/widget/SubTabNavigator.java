@@ -1,5 +1,6 @@
 package com.wuchao.store.view.widget;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
@@ -68,7 +69,8 @@ public class SubTabNavigator extends LinearLayout implements View.OnClickListene
         initView(context);
     }*/
 
-    private void init(Context context,AttributeSet attrs) {
+    @SuppressLint("CustomViewStyleable")
+    private void init(Context context, AttributeSet attrs) {
         TypedArray typedArray = null;
         if (attrs != null)
             typedArray = getContext().obtainStyledAttributes(attrs, R.styleable.sub_tab);

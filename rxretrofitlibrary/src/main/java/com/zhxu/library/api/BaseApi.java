@@ -108,6 +108,7 @@ public abstract class BaseApi<T> implements Func1/*<BaseResultEntity<T>, T>*/ <R
         return baseUrl + mothed;
     }
 
+    @SuppressWarnings("unchecked")
     public void setRxAppCompatActivity(RxAppCompatActivity rxAppCompatActivity) {
         this.rxAppCompatActivity = new SoftReference(rxAppCompatActivity);
     }

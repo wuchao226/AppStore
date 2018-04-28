@@ -1,7 +1,6 @@
 package com.wuchao.store.mvp.view.activity;
 
 import android.os.Environment;
-import android.os.SystemClock;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.text.format.Formatter;
@@ -278,7 +277,7 @@ public class AppDetailActivity extends BaseMvpActivity<AppDetailPresenterImpl> i
                 new Thread(new Runnable() {
                     @Override
                     public void run() {
-                        SystemClock.sleep(3000);
+                        //SystemClock.sleep(1000);
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {

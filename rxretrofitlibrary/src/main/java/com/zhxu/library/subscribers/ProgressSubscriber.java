@@ -31,7 +31,7 @@ public class ProgressSubscriber<T> extends Subscriber<T> {
     private boolean showPorgress = true;
     /* 软引用回调接口*/
     private SoftReference<HttpOnNextListener> mSubscriberOnNextListener;
-    /*软引用反正内存泄露*/
+    /*软引用防止内存泄露*/
     private SoftReference<RxAppCompatActivity> mActivity;
     /*加载框可自己定义*/
     private ProgressDialog pd;
@@ -44,6 +44,7 @@ public class ProgressSubscriber<T> extends Subscriber<T> {
      *
      * @param api
      */
+    @SuppressWarnings("unchecked")
     public ProgressSubscriber(BaseApi api) {
         this.api = api;
         this.mSubscriberOnNextListener = api.getListener();
@@ -200,6 +201,7 @@ public class ProgressSubscriber<T> extends Subscriber<T> {
      *
      * @param t 创建Subscriber时的泛型类型
      */
+    @SuppressWarnings("unchecked")
     @Override
     public void onNext(T t) {
         if (mSubscriberOnNextListener.get() != null) {

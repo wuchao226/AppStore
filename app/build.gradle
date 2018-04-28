@@ -10,7 +10,7 @@ android {
     //编译SDK版本
     compileSdkVersion configInfo.compileSdkVersion
     //buid tools版本
-    buildToolsVersion configInfo.buildToolsVersion
+    //buildToolsVersion configInfo.buildToolsVersion
     defaultConfig {
         applicationId "com.wuchao.store"
         //最小支持的SDK版本
@@ -23,6 +23,11 @@ android {
         // 版本名字
         versionName configInfo.versionName
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        javaCompileOptions {
+            annotationProcessorOptions {
+                includeCompileClasspath true
+            }
+        }
     }
     buildTypes {
         release {
@@ -47,14 +52,14 @@ dependencies {
     librarys.design
     librarys.recyclerview
     librarys.cardview
-    compile 'com.jakewharton:butterknife:8.4.0'
-    annotationProcessor 'com.jakewharton:butterknife-compiler:8.4.0'
-    compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha7'
-    compile 'com.android.support:support-v4:25.3.1'
-    compile 'com.google.dagger:dagger:2.4'
-    compile 'com.google.dagger:dagger-compiler:2.4'
-    compile 'org.glassfish:javax.annotation:10.0-b28'
-    compile 'org.greenrobot:greendao:3.2.2'
-    compile 'de.hdodenhof:circleimageview:2.1.0'
+    implementation 'com.jakewharton:butterknife:8.5.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    implementation 'com.android.support:support-v4:27.1.0'
+    implementation 'com.google.dagger:dagger:2.4'
+    annotationProcessor 'com.google.dagger:dagger-compiler:2.4'
+    implementation 'org.glassfish:javax.annotation:10.0-b28'
+    implementation 'org.greenrobot:greendao:3.2.2'
+    implementation 'de.hdodenhof:circleimageview:2.1.0'
     testCompile 'junit:junit:4.12'
 }

@@ -53,10 +53,6 @@ public class FlowLayout extends ViewGroup {
         super(context, attrs, defStyleAttr);
     }
 
-    public FlowLayout(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
-        super(context, attrs, defStyleAttr, defStyleRes);
-    }
-
     public void setHorizontalSpacing(int spacing) {
         if (mHorizontalSpacing != spacing) {
             mHorizontalSpacing = spacing;

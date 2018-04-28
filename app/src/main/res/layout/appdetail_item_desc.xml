@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/detail_desc_layout_linearlayout"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
@@ -9,7 +10,7 @@
     android:paddingRight="16.0dp">
 
     <ImageView
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="@dimen/line_width"
         android:layout_marginBottom="16.0dip"
         android:layout_marginTop="16.0dip"
@@ -34,13 +35,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="top"
-            android:text="内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容"/>
+            android:text="内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容"
+            tools:ignore="HardcodedText"/>
 
         <ImageView
             android:id="@+id/detail_desc_folding_imageview"
             android:layout_width="18.0dp"
             android:layout_height="18.0dp"
             android:layout_gravity="bottom|center|right"
-            android:background="@drawable/ic_public_arrow_down"/>
+            android:background="@drawable/ic_public_arrow_down"
+            tools:ignore="ContentDescription"/>
     </FrameLayout>
 </LinearLayout>

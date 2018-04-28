@@ -117,6 +117,7 @@ public class DownloadProgressButton extends ProgressBar implements View.OnClickL
         drawProgressRectBackground(canvas,mLoadingBorderColor);
         drawProgressRectWithClip(canvas);
         int progress = (int) (100 * (getProgress() * 1.0f / getMax()));
+        // TextUtils.concat字符串拼接
         String progressValue = TextUtils.concat(String.valueOf(progress), "%").toString();
         drawProgressText(canvas, progressValue);
         if (getProgress() == getMax()) {
@@ -167,7 +168,9 @@ public class DownloadProgressButton extends ProgressBar implements View.OnClickL
         } else {
             mRoundRectPath.reset();
         }
+        //改变后面操作的起始点位置
         mRoundRectPath.moveTo(mValidHeight / 2, mValidHeight);
+        //添加圆弧到path中会判断要绘制圆弧的起点与绘制圆弧之前path中最后的点是否是同一个点，如果不是同一个点的话，就会连接两个点。
         mRoundRectPath.arcTo(new RectF(0, 0, mValidHeight, mValidHeight), 90, 180);
         mRoundRectPath.lineTo(mValidWidth - mValidHeight / 2, 0);
         mRoundRectPath.arcTo(new RectF(mValidWidth - mValidHeight, 0, mValidWidth, mValidHeight), -90, 180);
